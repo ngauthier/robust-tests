@@ -6,8 +6,6 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create!(params[:post])
-    render :update do |page|
-      page.insert_html :top, 'posts', :partial => 'post', :object => post
-    end
+    redirect_to posts_path
   end
 end
