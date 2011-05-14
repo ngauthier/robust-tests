@@ -10,9 +10,4 @@ class PostsController < ApplicationController
       page.insert_html :top, 'posts', :partial => 'post', :object => post
     end
   end
-
-  def destroy
-    Post.destroy(params[:id])
-    redirect_to posts_path
-  end
 end
