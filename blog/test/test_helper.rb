@@ -1,13 +1,30 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'capybara/dsl'
+
+Capybara.app = Blog::Application
+Capybara.default_selector = :css
+Capybara.default_driver = :rack_test
+DatabaseCleaner.strategy = :truncation
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+  self.use_transactional_fixtures = false
+  include Capybara
 
-  # Add more helper methods to be used by all tests here...
+  setup do
+    Capybara.reset_sessions!
+    DatabaseCleaner.start
+  end
+
+  teardown do
+    DatabaseCleaner.clean
+  end
+
+  def assert_see(content, msg = nil)
+    assert page.has_content?(content), (msg || %{Expected to see "#{content}"})
+  end
+  def refute_see(content, msg = nil)
+    assert !page.has_content?(content), (msg || %{Did not expect to see "#{content}"})
+  end
 end
