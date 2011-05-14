@@ -13,8 +13,6 @@ class PostsController < ApplicationController
 
   def destroy
     Post.destroy(params[:id])
-    render :update do |page|
-      page.remove %{post_#{params[:id]}}
-    end
+    redirect_to posts_path
   end
 end
