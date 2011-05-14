@@ -1,6 +1,6 @@
-<div class='post'>
+<div class='post' id='<%= dom_id(post) %>'>
   <h2><%= post.title %></h2>
   <div><%= post.body %></div>
-  <div><%= button_to 'Delete', post_path(post), :method => :delete %></div>
+  <div><%= button_to 'Delete', post_path(post), :method => :delete, :remote => true %></div>
 </div>
 
