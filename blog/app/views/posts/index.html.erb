@@ -1,19 +1,1 @@
 <h1>Posts</h1>
-
-<div id='posts'>
-  <%= render @posts %>
-</div>
-
-<%= form_for @new_post do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :body %>
-  </p>
-  <%= f.text_area :body %>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
