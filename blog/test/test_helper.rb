@@ -6,7 +6,7 @@ require 'cover_me'
 
 Capybara.app = Blog::Application
 Capybara.default_selector = :css
-Capybara.default_driver = :rack_test
+Capybara.default_driver = :selenium
 DatabaseCleaner.strategy = :truncation
 
 

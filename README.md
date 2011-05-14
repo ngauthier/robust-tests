@@ -10,7 +10,7 @@
 * Post index
 * Create form
 * Write integration tests
-* Check coverage w/ rcov
+* Check coverage w/ cover\_me
 
 # We do
 * add delete button and test
