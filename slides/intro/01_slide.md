@@ -3,6 +3,7 @@
 ### Nick Gauthier
 ### @ngauthier
 ### ngauthier@shortmail.com
+### [http://github.com/ngauthier/robust-tests](http://github.com/ngauthier/robust-tests)
 
 !SLIDE bullets incremental
 # Have you ever ...
@@ -35,9 +36,25 @@
 ## Green = your new code works
 
 !SLIDE
+# The challenge
+## Write tests that don't need to change
+## (when you functionality stays the same)
+
+!SLIDE
+# Real world experience
+## Shortmail.com
+### Rails Ajax => Backbone JS
+### Without changing the tests
+
+!SLIDE
 # The application
 ## It's a blog!
-### Let's get started
-### [https://github.com/ngauthier/robust-tests](https://github.com/ngauthier/robust-tests)
-
+    @@@ bash
+    git clone git://github.com/ngauthier/robust-tests.git
+    git co -b 00-initial
+    cd robust-tests/blog
+    rvm use 1.9.2
+    gem install bundler
+    bundle
+    rake
 
