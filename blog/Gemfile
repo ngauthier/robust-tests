@@ -8,11 +8,11 @@ gem 'thin'
 
 gem 'sqlite3'
 
-group :development do
+group :development, :test do
   gem 'nifty-generators'
-end
-
-group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'cover_me', '>= 1.0.0.rc6'
+
 end
+

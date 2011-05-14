@@ -2,11 +2,14 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/dsl'
+require 'cover_me'
 
 Capybara.app = Blog::Application
 Capybara.default_selector = :css
 Capybara.default_driver = :rack_test
 DatabaseCleaner.strategy = :truncation
+
+
 
 class ActiveSupport::TestCase
   self.use_transactional_fixtures = false
