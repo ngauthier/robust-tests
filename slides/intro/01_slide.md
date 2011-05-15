@@ -55,6 +55,9 @@
 # Tests are coupling!
 
 !SLIDE
+# Relax
+
+!SLIDE
 # A diagram
 ## Your Rails stack
 
