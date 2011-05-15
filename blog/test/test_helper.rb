@@ -30,3 +30,23 @@ class ActiveSupport::TestCase
     assert !page.has_content?(content), (msg || %{Did not expect to see "#{content}"})
   end
 end
+
+module Dom
+  class Post < Domino
+    selector '#posts .post' 
+    attribute :title
+    attribute :body
+
+    def self.create(opts = {})
+      fill_in 'Title', :with => 'Making a sandwich'
+      fill_in 'Body', :with => 'ham and cheese'
+      click_button 'Create Post'
+    end
+
+    def delete
+      within id do
+        click_button 'Delete'
+      end
+    end
+  end
+end

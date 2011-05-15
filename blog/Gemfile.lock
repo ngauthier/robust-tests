@@ -50,6 +50,8 @@ GEM
     culerity (0.2.15)
     daemons (1.1.2)
     database_cleaner (0.6.7)
+    domino (0.2.0)
+      capybara (>= 0.4.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
@@ -112,6 +114,7 @@ DEPENDENCIES
   capybara
   cover_me (>= 1.0.0.rc6)
   database_cleaner
+  domino
   nifty-generators
   rails (= 3.0.6)
   sqlite3

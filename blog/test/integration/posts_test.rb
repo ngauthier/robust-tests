@@ -1,34 +1,34 @@
 require 'test_helper'
 
 class PostsTest < ActionDispatch::IntegrationTest
-  test 'create a post' do
+  setup do 
     visit '/'
     assert_see 'Posts'
+  end
 
-    fill_in 'Title', :with => 'Making a sandwich'
-    fill_in 'Body', :with => 'ham and cheese'
-    click_button 'Create Post'
+  test 'create a post' do
+    Dom::Post.create(
+      :title => 'Making a sandwich',
+      :body => 'ham and cheese'
+    )
 
-    assert_see 'Posts'
-    assert_see 'Making a sandwich'
-    assert_see 'ham and cheese'
+    assert_equal 1, Dom::Post.count
+    assert_equal 'Making a sandwich', Dom::Post.first.title
+    assert_equal 'ham and cheese',    Dom::Post.first.body
   end
 
   test 'delete a post' do
-    visit '/'
-    assert_see 'Posts'
-    fill_in 'Title', :with => 'Making a sandwich'
-    fill_in 'Body', :with => 'ham and cheese'
-    click_button 'Create Post'
+    Dom::Post.create(
+      :title => 'Making a sandwich',
+      :body => 'ham and cheese'
+    )
 
-    assert_see 'Posts'
-    assert_see 'Making a sandwich'
-    assert_see 'ham and cheese'
+    assert_equal 1, Dom::Post.count
+    assert_equal 'Making a sandwich', Dom::Post.first.title
+    assert_equal 'ham and cheese',    Dom::Post.first.body
 
-    click_button 'Delete'
+    Dom::Post.first.delete
     
-    assert_see 'Posts'
-    refute_see 'Making a sandwich'
-    refute_see 'ham and cheese'
+    assert_equal 0, Dom::Post.count
   end
 end
