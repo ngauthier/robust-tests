@@ -38,7 +38,19 @@
 !SLIDE
 # The challenge
 ## Write tests that don't need to change
-## (when you functionality stays the same)
+## (when your functionality stays the same)
+
+!SLIDE bullets incremental
+# A thought
+* Are more tests better?
+* When are more tests worse?
+
+!SLIDE
+# Tests are coupling!
+
+!SLIDE
+# A diagram
+## Your Rails stack
 
 !SLIDE
 # Real world experience
