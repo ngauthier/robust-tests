@@ -12,6 +12,7 @@ group :development, :test do
   gem 'nifty-generators'
   gem 'capybara'
   gem 'database_cleaner'
+  # If you're on 1.8.7, comment out the cover_me requirement below
   gem 'cover_me', '>= 1.0.0.rc6'
 
 end

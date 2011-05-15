@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/dsl'
+# If you're on 1.8.7, comment out the cover_me requirement below
 require 'cover_me'
 
 Capybara.app = Blog::Application
