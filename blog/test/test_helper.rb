@@ -10,8 +10,6 @@ Capybara.default_selector = :css
 Capybara.default_driver = :selenium
 DatabaseCleaner.strategy = :truncation
 
-
-
 class ActiveSupport::TestCase
   self.use_transactional_fixtures = false
   include Capybara

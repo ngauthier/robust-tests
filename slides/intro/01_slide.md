@@ -40,6 +40,12 @@
 ## Write tests that don't need to change
 ## (when your functionality stays the same)
 
+!SLIDE
+# Turing test
+
+!SLIDE
+# Duck typing
+
 !SLIDE bullets incremental
 # A thought
 * Are more tests better?
