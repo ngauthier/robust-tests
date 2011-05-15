@@ -20,6 +20,10 @@
 
 # You do
 
+## Extract the post body (Easy)
+* store the body of the post in a separate model ... and don't change the tests
+* If you get stuck, git diff 05-extract-body
+
 ## Sorting (Easy)
 * sort by name and sort by date - html with tests
 * refactor to do it with ajax
