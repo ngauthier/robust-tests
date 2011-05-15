@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @new_post = Post.new
+    @new_post.build_post_body
   end
 
   def create

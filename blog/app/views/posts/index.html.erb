@@ -9,10 +9,12 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
-  <p>
-    <%= f.label :body %>
-  </p>
-  <%= f.text_area :body %>
+  <%= f.fields_for :post_body do |pbf| %>
+    <p>
+      <%= pbf.label :body %>
+    </p>
+    <%= pbf.text_area :body %>
+  <% end %>
   <p>
     <%= f.submit %>
   </p>
